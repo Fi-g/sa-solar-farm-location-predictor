@@ -216,3 +216,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+*.db
+
+# Keep empty folder placeholders
+!.gitkeep
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc

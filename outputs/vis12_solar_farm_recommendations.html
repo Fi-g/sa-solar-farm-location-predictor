@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cc6def17d7617cad23fae8fa71b78fba {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:30px;left:30px;z-index:1000;
+     background:white;padding:12px;border-radius:8px;
+     border:1px solid #ccc;font-size:12px;">
+  <b>Solar Farm Recommendations</b><br><br>
+  <span style="color:#D85A30;">●</span> Northern Cape<br>
+  <span style="color:#1D9E75;">●</span> Limpopo<br>
+  <span style="color:#378ADD;">●</span> Free State<br>
+  <br>
+  <span style="opacity:0.4;">○</span> 50km transmission radius
+</div>
+    
+            <div class="folium-map" id="map_cc6def17d7617cad23fae8fa71b78fba" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cc6def17d7617cad23fae8fa71b78fba = L.map(
+                "map_cc6def17d7617cad23fae8fa71b78fba",
+                {
+                    center: [-28.5, 24.7],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8a7d659565b9bb7bd45fad3e5af76e59 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8a7d659565b9bb7bd45fad3e5af76e59.addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_a996b86390413869453231416cf1ae6a = L.circle(
+                [-24.83385, 26.682606],
+                {"bubblingMouseEvents": true, "color": "#1D9E75", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1D9E75", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_59c39fca33faae4cb0eb9b43d568de97 = L.circleMarker(
+                [-24.83385, 26.682606],
+                {"bubblingMouseEvents": true, "color": "#1D9E75", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1D9E75", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_59c39fca33faae4cb0eb9b43d568de97.bindTooltip(
+                `<div>
+                     Rank #1 | Thabazimbi Local Municipality | Limpopo | Final Score: 0.626 | Underserved within 50km: 10 | Population served: 108202
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_35db950a63be6910262fa1e1f785f8af = L.circle(
+                [-29.689313, 20.543548],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_d4ede5850841bcae2b3f63a7bf30f995 = L.circleMarker(
+                [-29.689313, 20.543548],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_d4ede5850841bcae2b3f63a7bf30f995.bindTooltip(
+                `<div>
+                     Rank #2 | Kai !Garib Local Municipality | Northern Cape | Final Score: 0.533 | Underserved within 50km: 6 | Population served: 55336
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_17ce053493598542bd2d94d07c83ad61 = L.circle(
+                [-29.009944, 27.587232],
+                {"bubblingMouseEvents": true, "color": "#378ADD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#378ADD", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_0fd577f74a06548071e183eb137e4e10 = L.circleMarker(
+                [-29.009944, 27.587232],
+                {"bubblingMouseEvents": true, "color": "#378ADD", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#378ADD", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_0fd577f74a06548071e183eb137e4e10.bindTooltip(
+                `<div>
+                     Rank #3 | Setsoto Local Municipality | Free State | Final Score: 0.532 | Underserved within 50km: 22 | Population served: 55494
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c021cc460ae35ce031e4d1bec8c216d6 = L.circle(
+                [-28.334363, 20.830374],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_18ae687e05169be41f4e5f5e087f28d0 = L.circleMarker(
+                [-28.334363, 20.830374],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_18ae687e05169be41f4e5f5e087f28d0.bindTooltip(
+                `<div>
+                     Rank #4 | Upington | Northern Cape | Final Score: 0.490 | Underserved within 50km: 5 | Population served: 42078
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ea63021375388922831f55c24692bc59 = L.circle(
+                [-27.958988, 22.732954],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_53b7bf76a38b1d62aac06d0fb62426b6 = L.circleMarker(
+                [-27.958988, 22.732954],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_53b7bf76a38b1d62aac06d0fb62426b6.bindTooltip(
+                `<div>
+                     Rank #5 | Gamagara Local Municipality | Northern Cape | Final Score: 0.472 | Underserved within 50km: 10 | Population served: 42657
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_570c6442ee2d58e0c5850dd6c7642ff3 = L.circle(
+                [-28.202312, 22.03257],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_2a76cd7ba2d627ce052e156e87023262 = L.circleMarker(
+                [-28.202312, 22.03257],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_2a76cd7ba2d627ce052e156e87023262.bindTooltip(
+                `<div>
+                     Rank #6 | Tsantsabane Local Municipality | Northern Cape | Final Score: 0.302 | Underserved within 50km: 5 | Population served: 27512
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4fa4b3ab82b01ec191d088a0f8c311c6 = L.circle(
+                [-29.95285, 22.247235],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_6c885df475d39a7b60c31fed54f4276c = L.circleMarker(
+                [-29.95285, 22.247235],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_6c885df475d39a7b60c31fed54f4276c.bindTooltip(
+                `<div>
+                     Rank #7 | Siyathemba Local Municipality | Northern Cape | Final Score: 0.185 | Underserved within 50km: 0 | Population served: 9296
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_743638d9d3a53bdc10f0fcbd13b25692 = L.circle(
+                [-31.156628, 24.326366],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.15, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50000, "stroke": true, "weight": 2}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            var circle_marker_f7c048d12ca37c25fa048e48bc0e818b = L.circleMarker(
+                [-31.156628, 24.326366],
+                {"bubblingMouseEvents": true, "color": "#D85A30", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#D85A30", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_cc6def17d7617cad23fae8fa71b78fba);
+        
+    
+            circle_marker_f7c048d12ca37c25fa048e48bc0e818b.bindTooltip(
+                `<div>
+                     Rank #8 | Emthanjeni Local Municipality | Northern Cape | Final Score: 0.178 | Underserved within 50km: 1 | Population served: 31155
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
