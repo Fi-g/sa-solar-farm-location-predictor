@@ -56,9 +56,9 @@ Python | SQL | SQLite | Power BI | Prophet | GeoPandas | Folium
 
 ## Author 
 
-Refiloe Ntshabele
-Second Year Data Science Student
-Eduvos
+Refiloe Ntshabele |
+Second Year Data Science Student |
+Eduvos |
 www.linkedin.com/in/refiloe-ntshabele
 
 ## Licence 
