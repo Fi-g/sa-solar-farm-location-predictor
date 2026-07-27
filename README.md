@@ -11,6 +11,14 @@ This project combines village-level settlement data, national grid performance d
 - Identify 8 priority solar farm locations across 3 provinces
 - Calculate the minimum number of farms needed to reach 25% renewable energy penetration by 2030
 
+## Dashboard
+
+View the interactive dashboard here: 
+[SA Solar Farm Location Predictor Dashboard](https://app.powerbi.com/reportEmbed?reportId=01f21b25-a0c3-48bb-884c-c4994c7f19f5&autoAuth=true&ctid=cf87d705-23dc-4ae8-a866-47fb4924fa7a)
+
+Or view the static PDF export:
+[Dashboard PDF](outputs/SA_Solar_Dashboard.pdf)
+
 ## Key Findings 
 
 - Thabazimbi (Limpopo) ranks as the top priority location, serving 108202 people within its 50km transmission radius
